@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!--
+    The <servlet> tag will specify a servlet name to be associated
+    to a servlet class.
+    -->
+    <servlet>
+        <servlet-name>ageCalculatorServlet</servlet-name>
+        <servlet-class>servlets.AgeCalculatorServlet</servlet-class>
+    </servlet>
+    <!--
+    The <servlet-mapping> tag will specify a relevant servlet name
+    to be associated with a URL pattern.
+    -->
+    <servlet>
+        <servlet-name>ArithmeticCalculatorServlet</servlet-name>
+        <servlet-class>servlets.ArithmeticCalculatorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ageCalculatorServlet</servlet-name>
+        <url-pattern>/age</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ArithmeticCalculatorServlet</servlet-name>
+        <url-pattern>/arithmetic</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <!--
+    The <welcome-file-list> tag specifies a "welcome-file" to be displayed
+    when a client first arrives at the web application.
+    -->
+    <welcome-file-list>
+        <welcome-file>age</welcome-file>
+    </welcome-file-list>
+</web-app>
